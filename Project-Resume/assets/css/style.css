@@ -1,0 +1,624 @@
+/* ===================================== Import Less ================================== */
+
+@font-face {
+  font-family: 'Astron';
+  src: url('../fonts/AstronRegular.eot');
+  src: url('../fonts/AstronRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/AstronRegular.woff2') format('woff2'),
+    url('../fonts/AstronRegular.woff') format('woff'),
+    url('../fonts/AstronRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Italic.eot');
+  src: url('../fonts/PlayfairDisplay-Italic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Italic.woff') format('woff'),
+    url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'COLLONAR CAP';
+  src: url('../fonts/COLLONARCAP.eot');
+  src: url('../fonts/COLLONARCAP.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/COLLONARCAP.woff2') format('woff2'),
+    url('../fonts/COLLONARCAP.woff') format('woff'),
+    url('../fonts/COLLONARCAP.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Zurbrich';
+  src: url('../fonts/Zurbrich.eot');
+  src: url('../fonts/Zurbrich.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Zurbrich.woff2') format('woff2'),
+    url('../fonts/Zurbrich.woff') format('woff'),
+    url('../fonts/Zurbrich.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'BNazanin';
+  src: url('../fonts/BNazanin.ttf') format('ttf');
+  src: url('../fonts/BNazanin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BTitrBold';
+  src: url('../fonts/BTitrBold.eot') format('eot');
+  src: url('../fonts/BTitrBold.ttf') format('ttf');
+  src: url('../fonts/BTitrBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BYekan';
+  src: url('../fonts/BYekan-webfont.eot') format('eot');
+  src: url('../fonts/BYekan-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'IranNastaliq';
+  src: url('../fonts/IranNastaliq.eot') format('eot');
+  src: url('../fonts/IranNastaliq.ttf') format('ttf');
+  src: url('../fonts/IranNastaliq.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Sahel';
+  src: url('../fonts/Sahel.eot') format('eot');
+  src: url('../fonts/Sahel.ttf') format('ttf');
+  src: url('../fonts/Sahel.woff') format('woff');
+}
+
+/* ===================================== Basic CSS ================================== */
+
+html[data-theme='dark'] {
+  /* https://colorhunt.co/palette/0a26471442722052952c74b3 */
+  --bg: #333333;
+  --bg-sidebar: #41436A;
+  --color-title: #FFFFFF;
+  --color-1: #ACBFC2;
+  --color-2: #974063;
+}
+
+html {
+  /* https://colorhunt.co/palette/92b4ecffffffffe69affd24c */
+  --bg: #FFFFFF;
+  --bg-sidebar: #92B4EC;
+  --color-title: #333333;
+  /* --color-1: #FFE69A;
+  --color-2: #FFD24C; */
+  --color-1: #0A2647;
+  --color-2: #E65C4F;
+  --bg-shadow: rgb(255, 0, 0);
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: .5s !important;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+body {
+  background-color: var(--bg) !important;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.particles-js-canvas-el {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1100px;
+}
+
+/* ===================================== main ================================== */
+.profile-box {
+  width: 1030px;
+  margin: 30px auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: var(--bg);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.profile-box .right-box-main {
+  background-color: var(--bg-sidebar);
+}
+
+.profile-box .right-box-main .img-box {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-box .right-box-main .img-box img {
+  border-radius: 50%;
+  box-shadow: 0 2px 40px 0 var(--bg-shadow);
+  margin-top: -27%;
+  width: 50%;
+  animation: box-shadow-opacity 3s ease-in-out infinite, box-shadow-color 40s ease-in-out infinite;
+}
+
+.profile-box .right-box-main .full-name {
+  margin-top: 65px;
+}
+
+.profile-box .right-box-main .full-name .my-name {
+  font-family: "IranNastaliq";
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 200;
+  text-align: center;
+}
+
+.profile-box .right-box-main .full-name .job {
+  font-family: "IranNastaliq";
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.profile-box .right-box-main section {
+  margin: 50px 0px;
+}
+
+.profile-box .right-box-main section>header>h3 {
+  text-align: center;
+  font-family: 'BTitrBold';
+  color: var(--color-title);
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  border-bottom: 3px dashed;
+  padding: 0 0 2px 0;
+  margin: 0;
+}
+
+.profile-box .right-box-main section>.content-section {
+  margin: 5px;
+}
+
+.profile-box .right-box-main section>.content-section p,
+.profile-box .right-box-main section>.content-section li {
+  margin: 0;
+  font-family: "Sahel";
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+.profile-box .right-box-main section>.content-section>ul>li:nth-child(1) {
+  margin-right: 20px;
+  list-style-type: disc;
+}
+
+.profile-box .right-box-main section>.content-section>ul li:nth-child(2) {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.profile-box .right-box-main section>.content-section .icon-container {
+  display: block;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.profile-box .right-box-main section>.content-section .links .icon-container {
+  font-size: 2.5rem;
+  margin: 5px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+  color: var(--color-title);
+}
+
+.profile-box .right-box-main section>.content-section .links .icon-container:hover {
+  transform: scale(90%);
+  color: var(--color-2);
+}
+
+.profile-box .left-Box-main {
+  padding: 5px;
+}
+
+.profile-box .left-Box-main section header {
+  padding: 60px 10px 0;
+}
+
+.profile-box .left-Box-main section header h3 {
+  width: 100%;
+  background-color: var(--bg-sidebar);
+  text-align: center;
+  color: var(--color-title);
+  font-size: 1.2rem;
+  padding: 10px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: "BTitrBold";
+  border: 2px solid transparent;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-color: var(--color-title);
+  border-right-color: var(--color-title);
+}
+
+.profile-box .left-Box-main section .content-section {
+  padding: 0 15px;
+}
+
+/* ===================================== checkbox toggle theme  ================================== */
+.checkbox-toggle-theme {
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+  right: 5px;
+}
+
+.checkbox-toggle-theme input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.checkbox-toggle-theme label {
+  cursor: pointer;
+  /* text-indent: -9999px; */
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.checkbox-toggle-theme label:after {
+  content: "🌞";
+  position: absolute;
+  top: 0;
+  left: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 90px;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+html[data-theme='dark'] .checkbox-toggle-theme label:after {
+  content: "🌚";
+}
+
+.checkbox-toggle-theme input+label {
+  background: var(--bg-sidebar);
+}
+
+.checkbox-toggle-theme input:checked+label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.checkbox-toggle-theme label:active:after {
+  width: 130px;
+}
+
+/* ===================================== information card ================================== */
+
+.profile-box .left-Box-main section .cards {
+  padding: 0 45px 0 0 !important;
+}
+
+.information-card {
+  width: 95%;
+  position: relative;
+  max-width: 800px;
+  margin: 35px auto;
+  background: var(--bg);
+  border: 2px dashed var(--color-2);
+  padding: 25px;
+  border-radius: 25px;
+  height: 350px;
+  transition: all 0.3s;
+}
+
+.information-card__item {
+  display: flex;
+  align-items: center;
+}
+
+.information-card__img {
+  flex-shrink: 0;
+  height: 225px;
+  border: 2px dashed var(--color-2);
+  border-radius: 20px;
+  transform: translateX(80px);
+  overflow: hidden;
+  width: 45%;
+}
+
+.information-card__img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(147deg, var(--color-2) 0%, var(--bg-sidebar) 74%);
+  border-radius: 20px;
+  opacity: 0.8;
+}
+
+.information-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.information-card__content>* {
+  transform: translateY(25px);
+  transition: all 0.4s;
+}
+
+.information-card__date {
+  color: #7b7992;
+  font-family: "Sahel";
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 500;
+}
+
+.information-card__title {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "BTitrBold";
+  color: #000;
+}
+
+.information-card__name {
+  color: #000;
+  font-family: "Sahel";
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.information-card__text {
+  color: var(--color-title);
+  margin-bottom: 30px;
+  font-family: "BNazanin";
+  text-align: justify;
+  line-height: 1.5em;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.information-card__button {
+  display: inline-flex;
+  background-image: linear-gradient(147deg, var(--color-2) -5%, var(--bg-sidebar) 70%);
+  padding: 15px 35px;
+  border: 3px solid var(--color-2);
+  border-radius: 50px;
+  color: var(--color-title);
+  text-decoration: none;
+  font-family: "Sahel";
+  font-weight: bold;
+  justify-content: center;
+  text-align: center;
+  transition: all .5s ease-in-out;
+}
+
+.information-card__button:hover {
+  color: var(--bg);
+}
+
+/* ===================================== progress bar ================================== */
+
+progress {
+  opacity: 0;
+}
+
+.progress-element {
+  margin: 0 0 10px;
+}
+
+.progress-container {
+  position: relative;
+  background: #eee;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: var(--bg-sidebar);
+}
+
+.progress-element--premier .progress-container::before {
+  animation: progress-premier 1s 3s ease-in forwards;
+}
+
+.progress-element--photoshop .progress-container::before {
+  animation: progress-photoshop 1s 3s ease-in forwards;
+}
+
+.progress-element--photography .progress-container::before {
+  animation: progress-photography 1s 3s ease-in forwards;
+}
+
+.progress-element--filming .progress-container::before {
+  animation: progress-filming 1s 3s ease-in forwards;
+}
+
+.progress-label {
+  position: relative;
+  color: var(--color-title);
+  font-family: "Sahel";
+}
+
+.progress-label::after {
+  counter-reset: num var(--num);
+  content: counter(num) "%";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-element--premier .progress-label::after {
+  animation: progress-text-premier 1s 3s ease-in forwards;
+}
+
+.progress-element--photoshop .progress-label::after {
+  animation: progress-text-photoshop 1s 3s ease-in forwards;
+}
+
+.progress-element--photography .progress-label::after {
+  animation: progress-text-photography 1s 3s ease-in forwards;
+}
+
+.progress-element--filming .progress-label::after {
+  animation: progress-text-filming 1s 3s ease-in forwards;
+}
+
+
+/* ===================================== keyframes ================================== */
+@keyframes progress-premier {
+  to {
+    width: 40%;
+  }
+}
+
+@keyframes progress-photoshop {
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes progress-photography {
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes progress-filming {
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes progress-text-premier {
+  to {
+    --num: 40;
+  }
+}
+
+@keyframes progress-text-photoshop {
+  to {
+    --num: 80;
+  }
+}
+
+@keyframes progress-text-photography {
+  to {
+    --num: 90;
+  }
+}
+
+@keyframes progress-text-filming {
+  to {
+    --num: 85;
+  }
+}
+
+@keyframes box-shadow-opacity {
+
+  0%,
+  100% {
+    box-shadow: 0 2px 60px 0 var(--bg-shadow);
+
+  }
+
+  50% {
+    box-shadow: 0 2px 10px 0 var(--bg-shadow);
+  }
+
+}
+
+@keyframes box-shadow-color {
+
+  0% {
+    --bg-shadow: #ff0000;
+  }
+
+  10% {
+    --bg-shadow: #ff8000;
+  }
+
+  20% {
+    --bg-shadow: #ffd900;
+  }
+
+  30% {
+    --bg-shadow: #d4ff00;
+  }
+
+  40% {
+    --bg-shadow: #88ff00;
+  }
+
+  50% {
+    --bg-shadow: #00ff22;
+  }
+
+  60% {
+    --bg-shadow: #00fffb;
+  }
+
+  70% {
+    --bg-shadow: #009dff;
+  }
+
+  80% {
+    --bg-shadow: #0800ff;
+  }
+
+  90% {
+    --bg-shadow: #d400ff;
+  }
+
+  100% {
+    --bg-shadow: #cf0000;
+  }
+}
